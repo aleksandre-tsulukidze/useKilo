@@ -1,17 +1,23 @@
 import { api } from '../utils/axios-instance';
 import { API_URL } from '../utils/constants';
 import {
-  FetchDataRequestParams,
+  FetchAwardsResponseData,
   FetchDataResponseData,
 } from './interfaces/fetchData.interface';
 
-export const FetchData = async (
-  params: FetchDataRequestParams
-): Promise<FetchDataResponseData | undefined> => {
-  const { projectId } = params;
+export const fetchZones = async (): Promise<
+  FetchDataResponseData | undefined
+> => {
+  const response = await api.get<FetchDataResponseData>(`${API_URL}/zones`, {});
 
-  const response = await api.get<FetchDataResponseData>(
-    `${API_URL}/v1/project/${projectId}/data?`,
+  return response.data;
+};
+
+export const fetchAwards = async (
+  params: string
+): Promise<FetchAwardsResponseData | undefined> => {
+  const response = await api.get<FetchAwardsResponseData>(
+    `${API_URL}/awards?${params}`,
     {}
   );
 

@@ -1,3 +1,4 @@
 export enum QueryKey {
-  DATA = 'data',
+  ZONES = 'zones',
+  AWARDS = 'awards',
 }

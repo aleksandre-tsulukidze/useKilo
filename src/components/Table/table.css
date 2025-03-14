@@ -1,0 +1,42 @@
+.tableWrapper {
+  width: 100%;
+}
+
+table {
+  border: 1px solid lightgray;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+tbody {
+  border-bottom: 1px solid lightgray;
+}
+
+th {
+  border-bottom: 1px solid lightgray;
+  border-right: 1px solid lightgray;
+  padding: 2px 4px;
+  color: white
+}
+
+tr {
+  border-bottom: 1px solid lightgray;
+
+}
+
+td {
+  color: white;
+  padding: 5px;
+}
+
+tfoot {
+  color: gray;
+}
+
+tfoot th {
+  font-weight: normal;
+}
+
+.white-text {
+  color: white;
+}

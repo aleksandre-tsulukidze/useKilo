@@ -1,22 +1,18 @@
 import { useQuery } from '@tanstack/react-query';
 import { QueryKey } from './enums/queryKey.enum';
-import { FetchData } from '../services/services';
-import { FetchDataParams } from './interfaces';
 
-const getDataFN = async (
-  onlyCreatedFromAdmin: boolean
-): Promise<any[] | undefined> => {
-  const projectId = '';
+import { Zones } from './interfaces';
+import { fetchZones } from '../services/services';
 
-  if (!projectId) return;
+const getZonesDataFN = async (): Promise<Zones[] | undefined> => {
+  const response = await fetchZones();
 
-  const response = await FetchData({ projectId });
   return response?.data;
 };
 
-export const useGetDataQuery = (params: FetchDataParams) => {
+export const useGetDataQuery = () => {
   return useQuery({
-    queryFn: () => getDataFN(params.params),
-    queryKey: [QueryKey.DATA, params.params],
+    queryFn: () => getZonesDataFN(),
+    queryKey: [QueryKey.ZONES],
   });
 };
