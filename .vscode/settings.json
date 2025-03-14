@@ -1,0 +1,11 @@
+{
+  "editor.formatOnSave": true,
+  "prettier.singleQuote": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.tabSize": 2,
+
+  "[html][css][javascript][json][jsonc][svg]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.insertSpaces": true
+  }
+}
